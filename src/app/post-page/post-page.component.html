@@ -1,15 +1,19 @@
+<div *ngIf="post$ | async as post; else loading">
 <div class="post">
     <div class="header">
-        <h1>Post title</h1>
+        <h1>{{post.title}}</h1>
         <button routerLink='/' class="btn btn-link">To the main</button>
     </div>
     <div class="info">
-        <strong>there author of post</strong>
-        <small>date post</small>
+        <strong>{{post.author}}</strong>
+        <small>{{post.date | date:'medium'}}</small>
     </div>
     <div>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam sunt dicta, velit nulla quasi rerum ea adipisci aspernatur alias magnam eligendi nisi neque unde architecto vitae. Autem ab dolore ipsum repudiandae corporis fuga inventore assumenda minima asperiores, corrupti quisquam culpa enim quasi, esse ea reprehenderit, repellendus magnam error ex odio.</p>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam sunt dicta, velit nulla quasi rerum ea adipisci aspernatur alias magnam eligendi nisi neque unde architecto vitae. Autem ab dolore ipsum repudiandae corporis fuga inventore assumenda minima asperiores, corrupti quisquam culpa enim quasi, esse ea reprehenderit, repellendus magnam error ex odio.</p>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam sunt dicta, velit nulla quasi rerum ea adipisci aspernatur alias magnam eligendi nisi neque unde architecto vitae. Autem ab dolore ipsum repudiandae corporis fuga inventore assumenda minima asperiores, corrupti quisquam culpa enim quasi, esse ea reprehenderit, repellendus magnam error ex odio.</p>
+    <quill-view-html [content]="post.text"></quill-view-html>
     </div>
 </div>
+</div>
+
+<ng-template #loading>
+    <p class="text-center">Loading...</p>
+</ng-template>
