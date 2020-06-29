@@ -1,17 +1,113 @@
-.post {
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
 
-    h1 {
-        margin-bottom: 0.5rem;
-    }
+.post_container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+}
 
-    .info {
-        strong {
-            margin-right: 1rem;
+.post{
+    background-color: #ffffff;
+    width: 80%;
+    padding: 40px;
+    padding-top: 150px;
+
+    .info{
+        padding-bottom: 30px;
+        strong{
+            padding: 20px;
         }
     }
 }
+
+.header{
+    box-shadow: 0 2px 20px rgba(5, 5, 5, 0.13);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin:20px;
+}
+
+
+
+$border:2px;
+$dark:rgb(255, 251, 251);
+$neon:#fc0202;
+.btn-link{
+  position:relative;
+  color:$neon;
+  text-transform:uppercase;
+  background-color:transparent;
+  font-size:20px;
+  letter-spacing:3px;
+  overflow:hidden;
+  padding:1% 2%;
+  margin-right: 20px ;
+  cursor:pointer;
+  border:none;
+  transition:.6s ease;
+  
+  &:hover{
+    color:$dark;
+    background-color:$neon;
+    transition-delay:.5s;
+    box-shadow:0 0 10px $neon,
+               0 0 40px $neon,
+               0 0 80px $neon;
+               
+    span{
+      &:nth-child(1){left:100%;}
+      &:nth-child(2){top:100%;}
+      &:nth-child(3){right:100%;}
+      &:nth-child(4){bottom:100%;}
+    }
+  }
+  
+  span{
+    display:block;
+    position:absolute;
+    transition:.6s ease;
+    
+    &:nth-child(1){
+      top:0;
+      left:-100%;
+      width:100%;
+      height:$border;
+      background:linear-gradient(90deg, transparent, $neon);
+      transition-delay:.25s;
+    }
+    
+    &:nth-child(2){
+      top:-100%;
+      right:0;
+      width:$border;
+      height:100%;
+      background:linear-gradient(180deg, transparent, $neon);
+      transition-delay:.25s;
+    }
+    
+    &:nth-child(3){
+      bottom:0;
+      right:-100%;
+      width:100%;
+      height:$border;
+      background:linear-gradient(270deg, transparent, $neon);
+      transition-delay:.25s;
+    }
+    
+    &:nth-child(4){
+      bottom:-100%;
+      left:0;
+      width:$border;
+      height:100%;
+      background:linear-gradient(0, transparent, $neon);
+      transition-delay:.25s;
+    }
+  }
+}
+   

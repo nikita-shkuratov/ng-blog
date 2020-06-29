@@ -1,11 +1,20 @@
-<div class="card">
-    <div class="card-header">
-        <h2>{{post.title}}</h2>
-        <small>{{post.date | date:'dd.MM.yyyy'}}</small>
+<div class="container">
+    <div class="box">
+        <div class="content">
+            <h2>{{post.date | date:'medium'}}</h2>
+            <h3>{{post.author}}</h3>
+            <p>{{post.title}}</p>
+            <button [routerLink]="['/post', post.id]">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                open
+            </button>
+        </div>
     </div>
-    <div>
-        <small>{{post.author}}</small>
-    </div>
-    <button [routerLink]= "['/post', post.id]"
-    class="btn btn-dark">open</button>
 </div>
+
+<ng-template #loading>
+    <p class="text-center">Loading...</p>
+</ng-template>

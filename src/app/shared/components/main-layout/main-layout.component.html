@@ -1,7 +1,18 @@
-<nav class="navbar main">
-    <h1>NG-BLOG</h1>
-</nav>
+<div class="nav_wrapper">
+    <nav class="navbar_main">
+        <div class="nav_container">
+            <h1>NG-BLOG</h1>
+            <button class="btn_login" [routerLink]="['/admin', 'create']">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                admin panel</button>
+        </div>
+    </nav>
 
-<div class='container'>
-    <router-outlet></router-outlet>
+    <div class='post_container'>
+        <router-outlet></router-outlet>
+    </div>
+
 </div>

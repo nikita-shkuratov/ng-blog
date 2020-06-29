@@ -1,0 +1,215 @@
+.container {
+    position: relative;
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    margin: 50px;
+}
+
+.content {
+    position: relative;
+    padding: 20px;
+    color: #fff;
+}
+
+h2 {
+    position: absolute;
+    top: -60px;
+    right: 20px;
+    margin: 0 0 0 20px;
+    padding: 0;
+    font-size: 45px;
+    line-height: 1.1;
+    color: rgba(255, 255, 255, 0.06);
+    transition: 0.5s;
+}
+
+h3 {
+    margin: 0 0 10px;
+    font-size: 24px;
+    letter-spacing: 2px;
+    line-height: 1.2;
+}
+
+p {
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: 2px;
+    line-height: 1.2;
+}
+
+// card button start
+$accent-color: #07e8ff;
+$base-color: #2f0000;
+$border-size: 1px;
+
+@keyframes animateTop {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes animateRight {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+@keyframes animateBottom {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes animateLeft {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+button {
+    text-transform: uppercase;
+    text-shadow: 0 0 15px #000;
+    letter-spacing: 3px;
+    font-size: 12px;
+    color: $accent-color;
+    padding: 5% 10%;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.8);
+    position: relative;
+    overflow: hidden;
+    margin: 20px 0 0;
+    transition: 0.5s;
+    transform: translateY(-40px);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: $border-size;
+        left: $border-size;
+        bottom: $border-size;
+        width: 50%;
+        background-color: rgba(255, 255, 255, 0.05);
+    }
+    span {
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(4) {
+            position: absolute;
+        }
+
+        &:nth-child(1) {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: $border-size;
+            background: linear-gradient(90deg, $base-color, $accent-color, $base-color);
+            animation: animateTop 1s linear infinite paused;
+        }
+
+        &:nth-child(2) {
+            top: 0;
+            right: 0;
+            width: $border-size;
+            height: 100%;
+            background: linear-gradient(0, $base-color, $accent-color, $base-color);
+            animation: animateRight 1s linear infinite paused;
+        }
+
+        &:nth-child(3) {
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: $border-size;
+            background: linear-gradient(90deg, $base-color, $accent-color, $base-color);
+            animation: animateBottom 1s linear infinite paused;
+        }
+
+        &:nth-child(4) {
+            top: 0;
+            left: 0;
+            width: $border-size;
+            height: 100%;
+            background: linear-gradient(0, $base-color, $accent-color, $base-color);
+            animation: animateLeft 1s linear infinite paused;
+        }
+    }
+
+    &:hover {
+        span {
+            animation-play-state: running;
+        }
+    }
+}
+
+// card button end
+
+.box {
+    width: 260px;
+    min-height: 380px;
+    cursor: pointer;
+    position: relative;
+    background-color: #040a20;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+
+    &:hover {
+        .content {
+            h2 {
+                top: -180px;
+                color: rgba(255, 255, 255, 0.8);
+            }
+            button {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.06);
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        top: -3px;
+        left: -3px;
+        right: -3px;
+        bottom: -3px;
+        background-color: #fff;
+        transform: skew(2deg, 2deg);
+        z-index: -1;
+    }
+    &:nth-child(1) {
+        &:before {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        }
+    }
+}

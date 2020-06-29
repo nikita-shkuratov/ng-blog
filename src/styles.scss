@@ -2,6 +2,16 @@
 @import "~quill/dist/quill.core.css";
 @import "~quill/dist/quill.snow.css";
 
+.posts {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 150px 0 0 0;
+  border: 0;
+}
+
 :root {
   --primary-color: #dc3545;
   --dark-color: #333333;
@@ -114,7 +124,7 @@ img {
 
 .btn-link {
   background: none;
-  padding: 0;
+  padding: 5px;
   margin: 0;
 }
 
@@ -295,3 +305,5 @@ table th {
     }
   }
 }
+
+ 

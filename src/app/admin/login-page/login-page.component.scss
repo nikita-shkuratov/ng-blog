@@ -1,4 +1,13 @@
-form{
-    max-width: 600px;
-    margin: 0 auto;
+.about_container{
+    display: flex;
+    justify-content: center;  
+}
+
+.app-info{
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
 }
